@@ -1,0 +1,71 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="description" content="NirmaanWatch AI - Public Project Reality and Accountability Platform" />
+  <title>NirmaanWatch AI</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1220;
+      color: white;
+    }
+
+    #loading {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      color: #60a5fa;
+    }
+
+    p {
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    a {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      padding: 12px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 12px;
+    }
+  </style>
+
+  <script>
+    if (window.location.protocol === "file:") {
+      window.location.replace("http://localhost:5174/");
+    }
+  </script>
+</head>
+
+<body>
+  <div id="root">
+    <div id="loading">
+      <h1>NirmaanWatch AI</h1>
+      <p>Public Project Reality &amp; Accountability Platform</p>
+      <p>Starting your website...</p>
+      <a href="http://localhost:5174/">Open NirmaanWatch AI</a>
+      <p>Keep your frontend development server running.</p>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
+```
