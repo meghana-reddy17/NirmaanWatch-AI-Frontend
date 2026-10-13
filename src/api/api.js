@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api';
+const API_BASE = (import.meta.env.VITE_API_BASE_URL || 'https://nirmaanwatch-ai-backend-1.onrender.com/api').replace(/\/$/, '');
 
 function readCookie(name) {
   const match = document.cookie.split('; ').find((row) => row.startsWith(`${name}=`));

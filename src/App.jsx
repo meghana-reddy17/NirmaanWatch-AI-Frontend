@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 
-const API = import.meta.env.VITE_API_BASE_URL || "http://localhost:8080/api";
+const API = (import.meta.env.VITE_API_BASE_URL || "https://nirmaanwatch-ai-backend-1.onrender.com/api").replace(/\/$/, "");
 
 
 async function request(path, options = {}) {
@@ -539,7 +539,7 @@ function DataTable({ rows, kind, onStatus, onToggle }) {
 
   return <div className="table-wrap"><table><thead><tr>{columns.map(c => <th key={c[0]}>{c[0]}</th>)}{(reports || users) && <th>Actions</th>}</tr></thead>
     <tbody>{rows.map((x, i) => <tr key={x.id ?? x.publicReference ?? i}>
-      {columns.map(c => <td key={c[0]}>{cx || "—"}</td>)}
+      {columns.map(c => <td key={c[0]}>{c[1](x) || "—"}</td>)}
       {reports && <td><select aria-label="Report status" defaultValue={x.status || "SUBMITTED"} onChange={e => onStatus?.(x.id, e.target.value)}><option value="SUBMITTED">Submitted</option><option value="UNDER_REVIEW">Under review</option><option value="IN_PROGRESS">In progress</option><option value="RESOLVED">Resolved</option><option value="REJECTED">Rejected</option></select></td>}
       {users && <td><Button onClick={() => onToggle?.(x.id, !x.enabled)}>{x.enabled ? "Disable" : "Enable"}</Button></td>}
     </tr>)}</tbody></table></div>;
